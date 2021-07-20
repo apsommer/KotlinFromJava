@@ -20,6 +20,7 @@ import java.io.File
 import java.io.FileNotFoundException
 
 object Repository {
+
     val BACKUP_PATH = "/backup/user.repo"
 
     private val _users = mutableListOf<User>()
@@ -29,7 +30,7 @@ object Repository {
         get() = _users
 
     val nextGuestId
-        get() = _nextGuestId++
+        get() = _nextGuestId ++
 
     init {
         _users.add(User(100, "josh", "Joshua Calvert", listOf("admin", "staff", "sys")))
@@ -38,22 +39,26 @@ object Repository {
         _users.add(User(103, "warlow", groups = listOf("staff", "inactive")))
     }
 
-    fun saveAs(path: String?):Boolean {
-        val backupPath = path ?: return false
+    fun saveAs(path: String?): Boolean {
 
+        val backupPath = path ?: return false
         val outputFile = File(backupPath)
-        if (!outputFile.canWrite()) {
-            throw FileNotFoundException("Could not write to file: $backupPath")
-        }
+
+        if (!outputFile.canWrite()) throw FileNotFoundException("Could not write to file: $backupPath")
+
         // Write data...
+
         return true
     }
 
     fun addUser(user: User) {
-        // Ensure the user isn't already in the collection.
+
+        // ensure user not already in collection
         val existingUser = users.find { user.id == it.id }
         existingUser?.let { _users.remove(it) }
-        // Add the user.
+
+        // add user
         _users.add(user)
     }
 }
+
