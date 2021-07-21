@@ -21,7 +21,7 @@ import java.io.FileNotFoundException
 
 object Repository {
 
-    val BACKUP_PATH = "/backup/user.repo"
+    const val BACKUP_PATH = "/backup/user.repo"
 
     private val _users = mutableListOf<User>()
     private var _nextGuestId = 1000
