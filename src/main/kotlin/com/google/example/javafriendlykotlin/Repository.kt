@@ -39,6 +39,9 @@ object Repository {
         _users.add(User(101, "dahybi", "Dahybi Yadev", listOf("staff", "nodes")))
         _users.add(User(102, "sarha", "Sarha Mitcham", listOf("admin", "staff", "sys")))
         _users.add(User(103, "warlow", groups = listOf("staff", "inactive")))
+
+        // compile error because display name skipped and param not named
+        // _users.add(User(103, "warlow", listOf("staff", "inactive")))
     }
 
     @JvmStatic

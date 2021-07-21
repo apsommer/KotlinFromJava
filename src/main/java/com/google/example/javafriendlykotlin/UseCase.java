@@ -51,4 +51,20 @@ public class UseCase {
             // Log exception.
         }
     }
+
+    // understand @JvmOverloads annotation
+    private void testJvmOverloads() {
+
+        // two params
+        User syrinx = new User(1001, "syrinx");
+
+        // use default for groups
+        User ione = new User(1002, "ione", "Ione Saldana");
+
+        List<String> memberships = new ArrayList<>();
+        memberships.add("staff");
+
+        // compile error because display name skipped, fix (in Kotlin) with named param
+        // User beaulieu = new User(1002, "beaulieu", memberships);
+    }
 }

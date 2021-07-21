@@ -16,7 +16,7 @@
 
 package com.google.example.javafriendlykotlin
 
-data class User(
+data class User @JvmOverloads constructor(
     val id: Int,
     val username: String,
     val displayName: String = username.toTitleCase(),
