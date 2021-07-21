@@ -23,7 +23,7 @@ import java.util.List;
 public class UseCase {
 
     public static User registerGuest(String name) {
-        User guest = new User(Repository.getNextGuestId(), StringUtilsKt.nameToLogin(name), name);
+        User guest = new User(Repository.getNextGuestId(), StringUtils.nameToLogin(name), name);
         Repository.addUser(guest);
         return guest;
     }
