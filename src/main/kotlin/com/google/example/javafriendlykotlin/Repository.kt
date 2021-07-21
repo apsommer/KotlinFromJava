@@ -26,9 +26,11 @@ object Repository {
     private val _users = mutableListOf<User>()
     private var _nextGuestId = 1000
 
+    @JvmStatic
     val users: List<User>
         get() = _users
 
+    @JvmStatic
     val nextGuestId
         get() = _nextGuestId ++
 
@@ -39,6 +41,7 @@ object Repository {
         _users.add(User(103, "warlow", groups = listOf("staff", "inactive")))
     }
 
+    @JvmStatic
     fun saveAs(path: String?): Boolean {
 
         val backupPath = path ?: return false
@@ -51,6 +54,7 @@ object Repository {
         return true
     }
 
+    @JvmStatic
     fun addUser(user: User) {
 
         // ensure user not already in collection
