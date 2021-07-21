@@ -18,6 +18,7 @@ package com.google.example.javafriendlykotlin
 
 import java.io.File
 import java.io.FileNotFoundException
+import java.io.IOException
 
 object Repository {
 
@@ -45,6 +46,7 @@ object Repository {
     }
 
     @JvmStatic
+    @Throws(IOException::class)
     fun saveAs(path: String?): Boolean {
 
         val backupPath = path ?: return false
